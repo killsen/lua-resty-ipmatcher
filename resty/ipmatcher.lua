@@ -11,7 +11,7 @@ local ffi         = require "ffi"
 local ffi_cdef    = ffi.cdef
 local ffi_copy    = ffi.copy
 local ffi_new     = ffi.new
-local C           = ffi.C
+local C           = ffi.os == "Windows" and ffi.load "Ws2_32" or ffi.C
 local insert_tab  = table.insert
 local sort_tab    = table.sort
 local string      = string
